@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: promo-2
+spec:
+  replicas: 1
+  selector:
+    matchLabels: { app: promo-2 }
+  template:
+    metadata:
+      labels: { app: promo-2 }
+    spec:
+      containers:
+        - name: web
+          image: petitpanier:1.0
+          imagePullPolicy: IfNotPresent

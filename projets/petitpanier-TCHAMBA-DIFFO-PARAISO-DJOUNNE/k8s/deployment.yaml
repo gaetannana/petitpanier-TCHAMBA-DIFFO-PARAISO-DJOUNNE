@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: petitpanier
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: petitpanier
+  template:
+    metadata:
+      labels:
+        app: petitpanier   # identique au matchLabels
+    spec:
+      containers:
+        - name: web
+          image: petitpanier:1.0   # votre image en version 1.0
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet: { path: /, port: 8080 }
+            periodSeconds: 5
+          resources:
+            requests: { cpu: 50m, memory: 32Mi }
+            limits: { cpu: 200m, memory: 128Mi }
