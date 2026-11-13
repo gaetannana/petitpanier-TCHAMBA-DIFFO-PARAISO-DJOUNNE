@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: web
-          image: petitpanier:1.0   # votre image en version 1.0
+          image: petitpanier:2.0   # votre image en version 1.0
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
