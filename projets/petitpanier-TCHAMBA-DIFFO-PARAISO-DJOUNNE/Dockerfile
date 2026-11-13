@@ -8,4 +8,7 @@ COPY index.html /usr/share/nginx/html/index.html
 EXPOSE 8080
 
 LABEL maintainer="PetitPanier Team"
+
 LABEL version="2.0"
+
+STOPSIGNAL SIGQUIT
