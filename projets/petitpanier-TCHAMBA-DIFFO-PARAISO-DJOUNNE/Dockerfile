@@ -6,3 +6,6 @@ COPY index.html /usr/share/nginx/html/index.html
 
 # Documenter le port d'écoute
 EXPOSE 8080
+
+LABEL maintainer="PetitPanier Team"
+LABEL version="2.0"
